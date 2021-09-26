@@ -54,11 +54,11 @@ function printHelp() {
     println
     println "    Flags:"
     println "    -c <channel name> - Name of channel to deploy chaincode to"
-    println "    -ccn <name> - Chaincode name. This flag can be used to deploy one of the asset transfer samples to a channel. Sample options: basic (default),ledger, private, sbe, secured"
-    println "    -ccl <language> - Programming language of chaincode to deploy: go (default), java, javascript, typescript"
+    println "    -ccn <name> - Chaincode name."
+    println "    -ccl <language> - Programming language of chaincode to deploy: go, java, javascript, typescript"
     println "    -ccv <version>  - Chaincode version. 1.0 (default), v2, version3.x, etc"
     println "    -ccs <sequence>  - Chaincode definition sequence. Must be an integer, 1 (default), 2, 3, etc"
-    println "    -ccp <path>  - (Optional) File path to the chaincode. When provided, the -ccn flag will be used only for the chaincode name."
+    println "    -ccp <path>  - File path to the chaincode."
     println "    -ccep <policy>  - (Optional) Chaincode endorsement policy using signature policy syntax. The default policy requires an endorsement from Org1 and Org2"
     println "    -cccg <collection-config>  - (Optional) File path to private data collections configuration file"
     println "    -cci <fcn name>  - (Optional) Name of chaincode initialization function. When a function is provided, the execution of init will be requested and the function will be invoked."
@@ -69,7 +69,7 @@ function printHelp() {
     println "   \033[0;32mdeployCC\033[0m -ccn -ccl -ccv -ccs -ccp -cci -r -d -verbose"
     println
     println " Examples:"
-    println "   network.sh deployCC -ccn basic -ccl javascript"
+    println "   network.sh deployCC -ccn basic -ccp ../asset-transfer-basic/chaincode-javascript/ ./ -ccl javascript"
     println "   network.sh deployCC -ccn mychaincode -ccp ./user/mychaincode -ccv 1 -ccl javascript"
   else
     println "Usage: "
@@ -94,11 +94,11 @@ function printHelp() {
     println
     println "    Used with \033[0;32mnetwork.sh deployCC\033[0m"
     println "    -c <channel name> - Name of channel to deploy chaincode to"
-    println "    -ccn <name> - Chaincode name. This flag can be used to deploy one of the asset transfer samples to a channel. Sample options: basic (default),ledger, private, sbe, secured"
-    println "    -ccl <language> - Programming language of the chaincode to deploy: go (default), java, javascript, typescript"
+    println "    -ccn <name> - Chaincode name."
+    println "    -ccl <language> - Programming language of the chaincode to deploy: go, java, javascript, typescript"
     println "    -ccv <version>  - Chaincode version. 1.0 (default), v2, version3.x, etc"
     println "    -ccs <sequence>  - Chaincode definition sequence. Must be an integer, 1 (default), 2, 3, etc"
-    println "    -ccp <path>  - (Optional) File path to the chaincode. When provided, the -ccn flag will be used only for the chaincode name."
+    println "    -ccp <path>  - File path to the chaincode."
     println "    -ccep <policy>  - (Optional) Chaincode endorsement policy using signature policy syntax. The default policy requires an endorsement from Org1 and Org2"
     println "    -cccg <collection-config>  - (Optional) File path to private data collections configuration file"
     println "    -cci <fcn name>  - (Optional) Name of chaincode initialization function. When a function is provided, the execution of init will be requested and the function will be invoked."
@@ -114,7 +114,7 @@ function printHelp() {
     println " Examples:"
     println "   network.sh up createChannel -ca -c mychannel -s couchdb -i 2.0.0"
     println "   network.sh createChannel -c channelName"
-    println "   network.sh deployCC -ccn basic -ccl javascript"
+    println "   network.sh deployCC -ccn basic -ccp ../asset-transfer-basic/chaincode-javascript/ -ccl javascript"
     println "   network.sh deployCC -ccn mychaincode -ccp ./user/mychaincode -ccv 1 -ccl javascript"
   fi
 }

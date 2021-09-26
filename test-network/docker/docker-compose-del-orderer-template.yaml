@@ -2,14 +2,12 @@
 version: "2"
 
 volumes:
-  orderer8.example.com:
+  _orderer_.example.com:
 
-networks:
-  test:
 
 services:
-  orderer8.example.com:
-    container_name: orderer8.example.com
+  _orderer_.example.com:
+    container_name: _orderer_.example.com
     image: hyperledger/fabric-orderer:$IMAGE_TAG
     environment:
       - FABRIC_LOGGING_SPEC=INFO
@@ -33,10 +31,8 @@ services:
     command: orderer
     volumes:
       - ../channel-artifacts/latest_config.block:/var/hyperledger/orderer/orderer.genesis.block
-      - ../organizations/ordererOrganizations/example.com/orderers/orderer8.example.com/msp:/var/hyperledger/orderer/msp
-      - ../organizations/ordererOrganizations/example.com/orderers/orderer8.example.com/tls/:/var/hyperledger/orderer/tls
-      - orderer8.example.com:/var/hyperledger/production/orderer
+      - ../organizations/ordererOrganizations/example.com/orderers/_orderer_.example.com/msp:/var/hyperledger/orderer/msp
+      - ../organizations/ordererOrganizations/example.com/orderers/_orderer_.example.com/tls/:/var/hyperledger/orderer/tls
+      - _orderer_.example.com:/var/hyperledger/production/orderer
     ports:
-      - 5058:7050
-    networks:
-      - test
+      - _port_:7050

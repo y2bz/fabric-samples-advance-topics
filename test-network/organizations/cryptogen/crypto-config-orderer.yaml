@@ -23,3 +23,27 @@ OrdererOrgs:
       - Hostname: orderer2
         SANS:
           - localhost
+      - Hostname: orderer3
+        SANS:
+          - localhost
+      - Hostname: orderer4
+        SANS:
+          - localhost
+      - Hostname: orderer5
+        SANS:
+          - localhost
+      - Hostname: orderer6
+        SANS:
+          - localhost
+      - Hostname: orderer7
+        SANS:
+          - localhost
+      - Hostname: orderer8
+        SANS:
+          - localhost
+      - Hostname: orderer9
+        SANS:
+          - localhost
+      - Hostname: orderer10
+        SANS:
+          - localhost
